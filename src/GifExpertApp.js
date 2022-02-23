@@ -1,13 +1,10 @@
 import React, { Fragment, useState } from 'react'
 import { AddCategory } from './components/AddCategory'
+import { GifGrid } from './components/GifGrid'
 
 export const GifExpertApp = () => {
 
-    const [categories, setCategories] = useState(['One Puch', 'Samurai X', 'Dragon Ball'])
-
-    // const handleApp = () => {
-    //     setCategories([...categories, 'Saint Seiya']);
-    // }
+    const [categories, setCategories] = useState(['One Puch'])
 
   return (
     <Fragment>
@@ -15,9 +12,12 @@ export const GifExpertApp = () => {
         <AddCategory setCategories={ setCategories } />
         <hr />
         <ol>
-            { categories.map( category  => {
-                return <li key={ category }>{ category }</li>
-            }) }
+            { categories.map( category  => (
+                <GifGrid 
+                  key={ category }
+                  category={ category } ></GifGrid>
+            )) 
+          }
         </ol>
     </Fragment>
   )
