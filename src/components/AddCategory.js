@@ -13,7 +13,7 @@ export const AddCategory = ({ setCategories }) => {
         e.preventDefault();
         // console.log("Submit hecho");
         if(inputValue.length > 2){
-          setCategories(categories => [...categories, inputValue]);
+          setCategories(categories => [inputValue, ...categories ]);
           setInputValue('');
         }
     }
