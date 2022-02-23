@@ -12,7 +12,7 @@ export const GifExpertApp = () => {
   return (
     <Fragment>
         <h2>GifExpertApp</h2>
-        <AddCategory></AddCategory>
+        <AddCategory setCategories={ setCategories } />
         <hr />
         <ol>
             { categories.map( category  => {
